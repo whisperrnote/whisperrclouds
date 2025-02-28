@@ -10,10 +10,7 @@ export interface User {
   subscription: SubscriptionType;
 }
 
-
-
-
-
+// User roles and subscription types
 export enum UserRole {
   USER = 'user',
   ADMIN = 'admin',
