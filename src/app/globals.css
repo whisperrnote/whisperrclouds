@@ -1,5 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #1e293b;
+  --accent-color: #8b5cf6;
+  --background-color: #ffffff;
+  --text-color: #1e293b;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg font-medium transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-6 rounded-lg font-medium transition-colors;
+  }
+
+  .btn-outline {
+    @apply border border-blue-500 text-blue-500 hover:bg-blue-50 py-2 px-6 rounded-lg font-medium transition-colors;
+  }
+
+  .feature-card {
+    @apply p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .pricing-card {
+    @apply p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100;
+  }
+
+  .pricing-card.highlight {
+    @apply border-blue-500 ring-2 ring-blue-500/10;
+  }
+
+  .pricing-card ul {
+    @apply space-y-2;
+  }
+
+  .pricing-card ul li {
+    @apply flex items-center;
+  }
+
+  .pricing-card ul li:before {
+    content: "✓";
+    @apply text-green-500 mr-2 font-bold;
+  }
 }
