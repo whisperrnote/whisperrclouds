@@ -139,6 +139,7 @@ export interface MarketplaceApp {
   publisher: string;
   rating: number;
   installCount: number;
+  icon: string;
   pricing: {
     type: 'free' | 'paid' | 'subscription';
     price?: number;

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { MarketplaceApp } from '@/types';
-import { Card } from '@/components/ui';
+import Card from '@/components/ui/Card';
 
 export default function IntegrationsPage() {
   const [apps, setApps] = useState<MarketplaceApp[]>([]);
