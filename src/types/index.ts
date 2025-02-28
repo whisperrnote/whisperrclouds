@@ -68,6 +68,25 @@ export interface OrganizationSubscription {
   expiresAt: Date;
 }
 
+export interface OrganizationInvite {
+  id: string;
+  email: string;
+  role: UserRole;
+  organizationId: string;
+  invitedBy: string;
+  status: 'pending' | 'accepted' | 'rejected';
+  expiresAt: Date;
+}
+
+export interface OrganizationDepartment {
+  id: string;
+  name: string;
+  organizationId: string;
+  leaderId: string;
+  memberIds: string[];
+  storageLimit: number;
+}
+
 // API and Integration types
 export interface ApiKey {
   id: string;
@@ -88,6 +107,43 @@ export interface AppIntegration {
   permissions: string[];
   userId: string;
   apiUrl?: string;
+}
+
+// AI Integration types
+export interface AIAnalysis {
+  fileId: string;
+  summary: string;
+  tags: string[];
+  entities: string[];
+  sentiment: number;
+  language: string;
+  createdAt: Date;
+}
+
+export interface AIPlugin {
+  id: string;
+  name: string;
+  provider: string;
+  capabilities: string[];
+  apiEndpoint: string;
+  isEnabled: boolean;
+  config: Record<string, any>;
+}
+
+// Integration Marketplace types
+export interface MarketplaceApp {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  publisher: string;
+  rating: number;
+  installCount: number;
+  pricing: {
+    type: 'free' | 'paid' | 'subscription';
+    price?: number;
+    trial?: number;
+  };
 }
 
 // Storage and Pricing types
